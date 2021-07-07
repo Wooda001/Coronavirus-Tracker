@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Coronavirus Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <h1> Coronavirus Tracker</h1>
+    <p> The purpose of this application is to provide international Coronavirus numbers for countries other than the U.S. </p>
+</head>
+<body>
+
+<!-- <p th:text="${locationStats}"></p> -->
+<div class="jumbotron">
+    <h1 class="display-4" th:text="${totalReportedCases}">Total Active Cases</h1>
+    <p class="lead">Total Active Cases Reported </p>
+    <p>NOTE: This report may be missing data and should not be used as an accurate reference.</p>
+</div>
+
+<table id="data-table">
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases Reported</th>
+    </tr>
+    <tr th:each="locationStat : ${locationStats}">
+        <td th:text="${locationStat.state}">N/A</td>
+        <td th:text="${locationStat.country}"></td>
+        <td th:text="${locationStat.latestTotalCases}">0</td>
+    </tr>
+</table>
+
+</body>
+</html>
