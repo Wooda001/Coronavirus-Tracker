@@ -1,0 +1,1 @@
+This project was created in order to help me learn more about Spring & Thymeleaf. The template was generated using the Spring Initializr (https://start.spring.io/) and data was sourced from a github reference of Johns Hopkins data. 
